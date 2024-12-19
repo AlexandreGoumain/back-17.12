@@ -1,3 +1,4 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
@@ -5,11 +6,12 @@ import carRouter from "./routes/carRouter.js";
 import movieRouter from "./routes/movieRouter.js";
 import userRouter from "./routes/userRouter.js";
 
-const PORT = 5000;
+const PORT = 3000;
 const app = express();
 
 dotenv.config();
 
+app.use(cors());
 app.use(express.json());
 
 const mongoUri = process.env.MONGO_URI;

@@ -2,7 +2,6 @@ import Car from "../models/Car.js";
 
 export const carValidation = (req, res, next) => {
     const { brand, name, model, year, color, price } = req.body;
-    console.log(req.body);
 
     if (!brand || !name || !model || !year || !color || !price) {
         return res.status(400).json({ message: "Tous les champs sont requis" });
